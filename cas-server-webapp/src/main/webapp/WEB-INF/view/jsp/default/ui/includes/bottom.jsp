@@ -22,10 +22,10 @@
 
 </div> <!-- END #content -->
 
-<footer>
+<footer class="footer">
     <div id="copyright">
-        <p><spring:message code="copyright" /></p>
-        <p>Powered by <a href="http://www.apereo.org/cas">Apereo Central Authentication Service <%=org.jasig.cas.CasVersion.getVersion()%></a></p>
+        <p align="center"><spring:message code="copyright" /></p>
+        <p align="center">Powered by <a href="http://www.apereo.org/cas">Apereo Central Authentication Service <%=org.jasig.cas.CasVersion.getVersion()%></a></p>
     </div>
 </footer>
 

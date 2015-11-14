@@ -93,7 +93,7 @@ header h1 {
     float: right;
     width: 119px;
     height: 60px;
-    background: url(../images/cas-logo.png) no-repeat;
+    /*background: url(../images/cas-logo.png) no-repeat; */
     text-indent: -999em;
 }
 
@@ -118,10 +118,10 @@ header h1 {
     background: url(../images/error.png) no-repeat 20px center;
 }
 
-#msg.success { border: 1px dotted #390; color: #390; padding-left: 100px; background: url(../images/success.png) no-repeat 20px center; }
-#msg.info { border: 1px dotted #008; color: #008; padding-left: 100px; background: url(../images/info.png) no-repeat 20px center; }
-#msg.question { border: 1px dotted #390; color: #390; padding-left: 100px; background: url(../images/question.png) no-repeat 20px center; }
-#msg.warn { border: 1px dotted #960; color: #960; padding-left: 100px; background: #ffbc8f url(../images/info.png) no-repeat 20px center; }
+#msg.success { outline: 1px solid #390; color: #390; padding-left: 100px; background: url(../images/success.png) no-repeat 20px center; }
+#msg.info { outline: 1px solid #2c6b88; color: #008; padding-left: 100px; background: url(../images/info.png) no-repeat 20px center; }
+#msg.question { outline: 1px solid #390; color: #390; padding-left: 100px; background: url(../images/question.png) no-repeat 20px center; }
+#msg.warn { outline: 1px solid #960; color: #960; padding-left: 100px; background: #ffbc8f url(../images/info.png) no-repeat 20px center; }
 
 .errors {
     border: 1px dotted #BB0000;
@@ -146,7 +146,7 @@ header h1 {
 }
 
 #login {
-    width: 320px;
+    width: 45%;
     float: left;
     margin-right: 20px;
 }
@@ -205,11 +205,6 @@ header h1 {
 
 #login .btn-reset:hover {
     background: #d4d4d4;
-}
-
-#sidebar {
-    width: auto;
-    height: 100%;
 }
 
 #sidebar-content {

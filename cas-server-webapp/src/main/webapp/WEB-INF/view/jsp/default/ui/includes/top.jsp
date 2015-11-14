@@ -37,15 +37,15 @@
   <spring:theme code="standard.custom.css.file" var="customCssFile" />
   <link rel="stylesheet" href="<c:url value="${customCssFile}" />" />
   <link rel="icon" href="<c:url value="/favicon.ico" />" type="image/x-icon" />
-  
-  <!--[if lt IE 9]>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
   <![endif]-->
 </head>
 <body id="cas">
-  <div id="container">
+  <div id="container" style="height: 95%; padding: 10px;">
       <header>
-        <a id="logo" href="http://www.apereo.org" title="<spring:message code="logo.title" />">Apereo</a>
-        <h1>Central Authentication Service (CAS)</h1>
+        <h1>CloudP Login</h1>
       </header>
       <div id="content">

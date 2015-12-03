@@ -100,16 +100,16 @@
     <bean id="dataSource"
           class="com.mchange.v2.c3p0.ComboPooledDataSource"
           p:driverClass="com.mysql.jdbc.Driver"
-          p:jdbcUrl="jdbc:mysql://localhost:3306/portable_mind"
+          p:jdbcUrl="jdbc:mysql://127.0.0.1:3307/cloud_communicator"
           p:user="root"
-          p:password=""
+          p:password="mateusz"
           p:minPoolSize="6"
           p:maxPoolSize="18" />
 
     <bean id="dbAuthHandler"
           class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler"
           p:dataSource-ref="dataSource"
-          p:sql="select password from user where mail=?">
+          p:sql="select password from user_account where mail=?">
 	</bean>
 
     <!-- Required for proxy ticket mechanism -->
@@ -133,7 +133,16 @@
     <bean id="attributeRepository"
       class="org.jasig.services.persondir.support.jdbc.SingleRowJdbcPersonAttributeDao">
 		<constructor-arg index="0" ref="dataSource" />
-		<constructor-arg index="1" value="select * from user join user_role on user_role.id = user.fk_user_role where {0}" />
+		<constructor-arg index="1" value="select user_account.username,
+		                    user_account.fk_role_id,
+		                    user_account.mail as mail,
+		                    user_account.password,
+		                    user_account.user_id as id,
+		                    user_account.username as username,
+		                    user_role.role as role
+		                    from user_account
+		                    join user_role on user_role.role_id = user_account.fk_role_id
+		                     where {0}" />
 		<property name="queryAttributeMapping">
 			<map>
 				<entry key="username" value="mail" />
@@ -142,7 +151,8 @@
 		<property name="resultAttributeMapping">
 			<map>
 				<entry key="id" value="id" />
-				<entry key="mail" value="username" />
+				<entry key="username" value="username" />
+                <entry key="mail" value="email" />
 				<entry key="role" value="roles" />
 			</map>
 		</property>

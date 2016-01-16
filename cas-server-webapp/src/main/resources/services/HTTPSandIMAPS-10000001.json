@@ -1,9 +1,9 @@
 {
   "@class" : "org.jasig.cas.services.RegexRegisteredService",
   "serviceId" : "^(http|https|imaps)://.*",
-  "name" : "HTTPS and IMAPS",
+  "name" : "Cloud Communicator",
   "id" : 10000001,
-  "description" : "This service definition authorized all application urls that support HTTPS and IMAPS protocols.",
+  "description" : "Login into Cloud Communicator Application",
   "proxyPolicy" : {
     "@class" : "org.jasig.cas.services.RefuseRegisteredServiceProxyPolicy"
   },

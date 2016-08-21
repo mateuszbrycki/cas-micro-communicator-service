@@ -100,9 +100,9 @@
     <bean id="dataSource"
           class="com.mchange.v2.c3p0.ComboPooledDataSource"
           p:driverClass="com.mysql.jdbc.Driver"
-          p:jdbcUrl="jdbc:mysql://127.0.0.1:3306/micro-communicator”
+          p:jdbcUrl="jdbc:mysql://127.0.0.1:3306/micro-communicator"
           p:user="root"
-          p:password="mateusz3”
+          p:password="mateusz3"
           p:minPoolSize="6"
           p:maxPoolSize="18" />
 

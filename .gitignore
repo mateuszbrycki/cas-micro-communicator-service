@@ -5,6 +5,7 @@
 target
 test-output/
 bin/
+lib/
 *.ipr
 *.iml
 *.iws

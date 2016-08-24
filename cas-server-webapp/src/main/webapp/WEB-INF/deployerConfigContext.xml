@@ -109,7 +109,7 @@
     <bean id="dbAuthHandler"
           class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler"
           p:dataSource-ref="dataSource"
-          p:sql="select password from T_USER where login=?">
+          p:sql="select password from user_account where username=?">
 	</bean>
 
     <!-- Required for proxy ticket mechanism -->
@@ -133,17 +133,20 @@
     <bean id="attributeRepository"
       class="org.jasig.services.persondir.support.jdbc.SingleRowJdbcPersonAttributeDao">
 		<constructor-arg index="0" ref="dataSource" />
-		<constructor-arg index="1" value="
-		                    select T_USER.email as mail,
-		                    T_USER.password as password,
-		                    T_USER.id as id,
-		                    T_USER.login as login,
-		                    (select GROUP_CONCAT(T_USER_AUTHORITY.authority_name SEPARATOR ',') from T_USER_AUTHORITY where T_USER_AUTHORITY.user_id = T_USER.id) as role
-		                    from T_USER
-		                    where {0}" />
+		<constructor-arg index="1" value="select user_account.username,
+		                    user_account.fk_role_id,
+		                    user_account.mail as mail,
+		                    user_account.password,
+		                    user_account.user_id as id,
+		                    user_account.username as username,
+		                    user_role.role as role
+		                    from user_account
+		                    join user_role on user_role.role_id = user_account.fk_role_id
+		                    where {0}
+		                    " />
 		<property name="queryAttributeMapping">
 			<map>
-				<entry key="username" value="login" />
+				<entry key="username" value="username" />
 			</map>
 		</property>
 		<property name="resultAttributeMapping">

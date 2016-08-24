@@ -1,9 +1,9 @@
 {
   "@class" : "org.jasig.cas.services.RegexRegisteredService",
   "serviceId" : "^(http|https|imaps)://.*",
-  "name" : "Cloud Communicator",
+  "name" : "Central Authentication Service",
   "id" : 10000001,
-  "description" : "Login into Cloud Communicator Application",
+  "description" : "Login into Micro Communicator Application",
   "proxyPolicy" : {
     "@class" : "org.jasig.cas.services.RefuseRegisteredServiceProxyPolicy"
   },
